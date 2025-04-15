@@ -1,0 +1,714 @@
+html, body {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    overflow-x: hidden;
+   color: white;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+
+/* HEADER */
+.header{
+    color: white;
+    padding: 10px;
+    margin-top: 60px;
+}
+
+.logo {
+    position: absolute; /* Garante que ele fique fixo */
+    left: 50px; /* Alinha na esquerda */
+    margin: 0; /* Remove margens */
+    top: -66px;
+    width: 220px;
+ 
+}
+
+
+
+.header_nav{
+    display:flex;
+    justify-content: center;
+    gap:70px;
+}
+
+.login, .luzes-ligada, .luzes-apagada{
+    border: none;
+    background-color: transparent;
+   
+   
+
+}
+.luzes-apagada i{
+    background-color: rgb(0, 0, 0);
+    border:none;
+    padding:20px 23px;
+    border-radius: 100px;
+    color:white;
+    font-size: 20px;
+    
+    position: absolute; /* Garante que ele fique fixo */
+    right: 210px; /* Alinha na esquerda */
+    margin: 0; /* Remove margens */
+    top: 10px;
+
+   
+
+} .luzes-ligada i {
+    background-color: rgb(255, 255, 255);
+    border:none;
+    padding: 20px;
+    border-radius: 100px;
+    color:rgb(0, 0, 0);
+    font-size: 20px;
+
+    position: absolute; /* Garante que ele fique fixo */
+    right: 210px; /* Alinha na esquerda */
+    margin: 0; /* Remove margens */
+    top: 10px;
+
+}
+
+
+.login i {
+    background-color: rgb(0, 255, 55);
+    border:none;
+    padding: 20px 20px;
+    border-radius: 100px;
+    color:white;
+    font-size: 20px;
+    position: absolute; /* Garante que ele fique fixo */
+    right: 90px; /* Alinha na esquerda */
+    margin: 0; /* Remove margens */
+    top: 10px;
+
+ 
+ 
+
+}
+
+
+.iban{
+    color: white;
+    font-size: 18px;
+    
+   
+}
+
+
+
+/* Contêiner principal */
+.container {
+    padding: 80px 20px 20px;
+    text-align: center;
+    margin-top: -70px;
+   
+}
+
+
+
+.cartao img{
+    width: 550px;
+    margin-top: -130px;
+    margin-bottom: -160px;
+  
+
+}
+.cartoes h2{
+    text-transform: uppercase;
+}
+
+.iban{
+    color: rgba(255, 255, 255, 0.752);
+    left: 580px;
+    position: absolute;
+    top: 330px;
+   
+
+}
+.nomek{
+    position: absolute;
+    left: 480px;
+    top:370px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.752);
+    
+    
+    
+}
+
+
+
+
+/* AÇÕES */
+.acoes {
+    
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+  
+    
+
+}
+
+.acao {
+    background: transparent;
+    color: white;
+    padding: 15px;
+    width: 100px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+.acao1,.acao2, .acao3, .acao4, .acao5, .acao6{
+    background: transparent;
+    border: 2px solid #e0b20e;
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    width: 100px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 20px;
+   
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+
+.acao1,.acao2, .acao3, .acao4, .acao5, .acao6{
+    background: transparent;
+    border: 2px solid #e0b20e;
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    width: 100px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 20px;
+   
+    cursor: pointer;
+    font-size: 14px;
+}
+/* Estilo base para todas as ações */
+.acao1, .acao2, .acao3, .acao4, .acao5, .acao6 {
+    background: transparent;
+    border: 2px solid #e0b20e;
+    
+    font-weight: bold;
+    padding: 15px;
+    width: 100px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden; /* Garante que a animação não ultrapasse os limites do botão */
+    z-index: 0; /* Define o contexto de empilhamento */
+}
+
+/* Ícones dentro das ações */
+.acao1 i, .acao2 i, .acao3 i, .acao4 i, .acao5 i, .acao6 i {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+/* Animação de preenchimento para todas as ações */
+.acao1::before, .acao2::before, .acao3::before, .acao4::before, .acao5::before, .acao6::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: #e0b20e; /* Cor de preenchimento */
+    border-radius: 50%; /* Faz o preenchimento começar como um círculo */
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease; /* Animação suave */
+    z-index: -1; /* Coloca o preenchimento atrás do texto */
+}
+
+/* Efeito de hover para todas as ações */
+.acao1:hover::before, .acao2:hover::before, .acao3:hover::before, .acao4:hover::before, .acao5:hover::before, .acao6:hover::before {
+    width: 200%; /* Faz o círculo crescer para preencher o botão */
+    height: 200%;
+}
+
+.acao1:hover, .acao2:hover, .acao3:hover, .acao4:hover, .acao5:hover, .acao6:hover {
+    color: black; /* Altera a cor do texto ao passar o mouse */
+}
+
+
+
+
+
+
+.caminhos{
+    
+    padding: 80px  20px;
+    text-align: center;
+   
+    
+}
+
+.valor{
+   
+    padding: 20px;
+    border-radius: 10px;
+    width: 120%;
+    max-width: 400px;
+    text-align: center;
+
+    /* Centralização na tela */
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.valor h2{
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+    margin-top: -40px;
+    font-weight: bold;
+}
+
+/* Estilização dos inputs com ícones */
+.campo1 {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.campo1 input {
+    width: 100%;
+    padding: 13px 30px; /* Espaço para os ícones */
+    border: 2px solid #deb008;
+    background-color: transparent;
+    border-radius: 40px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-left: -35px;
+    color:white;
+    margin-bottom: 20px;
+}
+
+
+
+
+.voltar{
+    background-color: rgb(255, 187, 0);
+    border:none;
+    padding: 19px 23px;
+    border-radius: 100px;
+    color:white;
+    font-size: 20px;
+    position: absolute; /* Garante que ele fique fixo */
+    right: 80% !important; /* Alinha na esquerda */
+    margin: 0; /* Remove margens */
+    top: 20px;
+        
+    
+    
+
+}
+
+.btnV{
+    width: 80%;
+  
+    background: #977701;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: -3px;
+    margin-top: -60px;
+ 
+}
+
+
+.btnA {
+
+    background: transparent;
+    border: 2px solid #e0b20e;
+    color: rgb(191, 189, 189);
+    padding: 15px;
+   
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden; /* Garante que a animação não ultrapasse os limites do botão */
+    z-index: 0; /* Define o contexto de empilhamento */
+    
+
+}
+
+
+
+.btnA::before {
+    content: "";
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: #e0b20e; /* Cor de preenchimento */
+    border-radius: 50%; /* Faz o preenchimento começar como um círculo */
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease; /* Animação suave */
+    z-index: -1; /* Coloca o preenchimento atrás do texto */
+}
+
+.btnA:hover::before {
+    width: 210%; /* Faz o círculo crescer para preencher o botão */
+    height: 220%;
+}
+
+.btnA:hover {
+    color: black; /* Altera a cor do texto ao passar o mouse */
+}
+
+.btnA.ativo {
+    background-color: #e0b20e ;/* Cor de fundo vermelha */
+    color: white; /* Cor do texto branca para contraste */
+    border: 1px solid #ffffff; /* Borda para destacar */
+}
+
+
+
+
+/* Estilo para o título */
+.consulta h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-top: -50px;
+    margin-bottom: 17px;
+    text-transform: uppercase;
+}
+
+
+/* Contêiner para os valores */
+.aparecer {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+     /* Borda leve */
+     padding: 10px;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    
+}
+
+
+/* Estilo para os spans */
+.aparecer span {
+    font-size: 22px;
+    
+    font-weight: bold;
+    padding: 10px;
+    background-color: transparent; /* Fundo branco */
+    border: 2px solid #e0b20e;
+    border-radius: 50px; /* Bordas arredondadas */
+    width: 90%; /* Ocupa toda a largura do contêiner */
+    text-align: center; /* Centraliza o texto */
+    font-family: monospace;
+}
+
+/* Estilo para hover nos spans */
+.aparecer span:hover {
+    background-color: #e0b20e; /* Cor de destaque ao passar o mouse */
+    color: #fff; /* Texto branco */
+    cursor: pointer; /* Mostra o cursor de clique */
+}
+
+
+
+
+
+.subir {
+    background-color: #f44336;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    bottom: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 999;
+}
+/* Contêiner para os valores */
+
+
+.extrato h2{
+    
+    font-size: 26px;
+    text-transform: uppercase;
+    
+    
+
+}
+.aparecer2 {
+    margin: -26px;
+
+}
+
+/* Estilo para cada item do histórico */
+.historico {
+    color: black;
+    font-size: 18px;
+    font-family: monospace ;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.calendario {
+    width: 378px;
+    margin: -110px 410px;
+    padding: 20px;
+    border: 1px solid #e0b20e;
+    border-radius: 10px;
+
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    
+}
+
+.mes h2 {
+    margin: 0;
+    font-size: 20px;
+  
+}
+
+.dias-semana, .dias {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.dias-semana span {
+    font-weight: bold;
+    color: #555;
+}
+
+.dias div {
+    padding: 15px;
+    border-radius: 100px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dias div:hover {
+    background-color: #e0b20e;
+    color: #fff;
+}
+
+.dias .hoje {
+    background-color: #e0b20e;
+    color: #fff;
+    font-weight: bold;
+}
+
+.dias .feriado {
+    background-color: #cc0000; /* vermelho forte */
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.dias .ponte {
+    background-color: #ff9999; /* vermelho fraco */
+    color: rgb(255, 255, 255);
+}
+
+.feriados {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff7e2;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 11px;
+    border: 1px solid #dddddd;
+}
+
+.feriados p {
+    display: flex;
+    align-items: center; /* Alinha o texto e o círculo verticalmente */
+    gap: 10px; /* Espaçamento entre o texto e o círculo */
+    margin: 10px 0;
+}
+
+
+
+.bolh1{
+    display: inline-block;
+    width: 20px; /* Largura do círculo */
+    height: 20px; /* Altura do círculo */
+    background-color: #cc0000; /* Cor do círculo */
+    border-radius: 50%; /* Faz o elemento ser um círculo */
+    border: 1px solid #880202; /* Borda ao redor do círculo */
+}
+.bolh2{
+    display: inline-block;
+    width: 20px; /* Largura do círculo */
+    height: 20px; /* Altura do círculo */
+    background-color:#ff9999; /* Cor do círculo */
+    border-radius: 50%; /* Faz o elemento ser um círculo */
+    border: 1px solid #333; /* Borda ao redor do círculo */
+}
+
+
+
+.voltar{
+    background-color: rgb(255, 187, 0);
+    border:none;
+    padding: 19px 23px;
+    border-radius: 100px;
+    color:white;
+    font-size: 20px;
+    
+    
+    right: 345px; /* Alinha na esquerda */
+    margin: 0; /* Remove margens */
+    top: 10px;
+        
+    
+    
+
+}
+
+
+
+
+.PerfiL {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    width: 100%;
+  
+    padding: 40px;
+}
+
+.perfil-container {
+    background-color: #121212; /* cinza escuro elegante */
+    padding: 30px;
+    border-radius: 16px;
+    width: 145%;
+    position: absolute;
+    max-width: 400px;
+    top: 130px;
+    left: 8px;
+    box-shadow: 0 0 20px rgba(255, 191, 0, 0.602);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.perfil-container:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 25px rgba(0, 255, 157, 0.4);
+}
+
+.foto-perfil {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid rgb(255, 204, 0); /* verde neon */
+    object-fit: cover;
+    box-shadow: 0 0 12px rgba(255, 204, 0, 0.666);
+}
+
+.nome-usuario {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.email-usuario {
+    font-size: 14px;
+    color: #aaaaaa;
+    margin-bottom: 25px;
+}
+
+.btn-editar,
+.btn-sair {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-editar {
+    background-color: rgb(255, 204, 0);
+    color: #000;
+}
+
+.btn-editar:hover {
+    background-color: #00cc7f;
+    transform: translateY(-2px);
+}
+
+.btn-sair {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+.btn-sair:hover {
+    background-color: #e63939;
+    transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+

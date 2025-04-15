@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXLOne</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="style2.css">
+
+    <link rel="apple-touch-icon" href="../favicon_io-13/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../favicon_io-13/apple-touch-icon.png" type="image/png">
+    
+</head>
+<body>
+
+    <header class="header" >
+        <nav class="header_nav">
+           <img src="../cartoes/logo2.png" alt="logo1" class="logo" >
+      
+            <!-- <a href="src/login.html"><button class="login"><i class="fa-solid fa-user"></i></button></a> -->
+            <!-- <a href="src/perfil.html"><button class="perfil"><i class="fa-solid fa-user"></i></button></a> -->
+
+            <button class="luzes-ligada" onclick="mudarParaClaro()">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+            
+            <button class="luzes-apagada" onclick="mudarParaEscuro()" style="display: none;">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+           
+            
+        </nav>
+    </header>
+
+    <main class="container">
+        <div id="banner" class="banner"></div>
+
+
+        <!-- Sessão dos Cartões -->
+        <section class="cartoes" >
+            <h2>Meu Cartão</h2>
+            <div class="cartoes-container">
+                <div class="cartao">
+                    <img src="../cartoes/erasebg-transformed-2.png" alt="">
+                    
+                    <p class="iban">0000_0000_0000_0000</p>
+                    <h3 class="nomek">Joaquim C.F. Marques</h3>
+                </div>
+                <!-- <div class="cartao">
+                    <h3>Cartão 2</h3>
+                    <p>**** 5678</p>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- Sessão de Ações -->
+        <section class="acoes" >
+            <button class="acao1" onclick="acaoValor()">
+                <i class="fa-solid fa-money-bill"></i> 
+                <p>Depósito</p>
+            </button>
+            <button class="acao2" onclick="acaoConsultar()">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <p>Consultar</p>
+            </button>
+            <button class="acao3" onclick="verExtrato()">
+                <i class="fa-solid fa-chart-line"></i>
+                <p>Histórico</p>
+            </button>
+            <button class="acao4" onclick="acaoCalendario()">
+                <i class="fa-solid fa-calendar-days"></i>
+                <p>Calendário</p>
+            </button>
+            <button class="acao5">
+                <i class="fa-solid fa-laptop-code"></i>
+                <p>Dev</p>
+            </button>
+            <button class="acao6" onclick="acaoPerfil()">
+                <i class="fa-solid fa-user"></i>
+                <p>Perfil</p>
+            </button>
+        </section>
+
+
+
+        <section class="caminhos" style="display: none;">
+            <button class="voltar" onclick="voltarPri()"><i class="fa-solid fa-arrow-left"></i></button>
+
+            <div class="valor">
+                <div id="notification-banner" class="hidden"></div>
+                <h2>Adicionar Valores</h2>
+                <form class="camposV">
+                    <div class="campo1">
+                        <input type="number" class="valor-input" placeholder="Depositar Valor" required>
+                        <input type="number" class="valor-input" placeholder="Desconto de Ida" required>
+                        <input type="number" class="valor-input" placeholder="Desconto de Regresso" required>
+                    <div class="valor-dias"> 
+                        <button type="button" class="btnA">Dom</button>
+                        <button type="button" class="btnA">Seg</button>
+                        <button type="button" class="btnA">Ter</button>
+                        <button type="button" class="btnA">Quar</button>
+                        <button type="button" class="btnA">Qui</button>
+                        <button type="button" class="btnA">Sex</button>
+                        <button type="button" class="btnA">Sab</button>
+                    </div>
+
+
+                    </div>
+            
+                    <button type="submit" class="btnV">Enviar</button>
+                </form>
+            </div>
+
+            <div class="consulta">
+                <button class="voltar" onclick="voltarPri()"><i class="fa-solid fa-arrow-left"></i></button>
+                <h2>SAldo</h2>
+                <!-- <div class="dadosConsul"></div> -->
+                <div class="aparecer">
+                    <span class="valore">0.00 kz</span>
+                 </div>
+              
+                
+
+            </div>
+
+            <div class="extrato" id="extrato">
+                <button class="voltar" onclick="voltarPri()"><i class="fa-solid fa-arrow-left"></i></button>
+               
+               
+                <h2>Histórico</h2>
+                <!-- <button class="subir" onclick="subirPri()"><i class="fa-solid fa-arrow-up"></i></button> -->
+                <div class="aparecer2">
+                    <div class="historico">
+                       
+                        <!-- Aqui aparece o histórico -->
+                      </div>
+                    </div>
+            </div>
+            
+
+
+            <div class="calendario">
+               
+                <div class="mes">
+                    <h2 id="mesAno"></h2>
+                </div>
+                <div class="dias-semana">
+                    <span>Dom</span>
+                    <span>Seg</span>
+                    <span>Ter</span>
+                    <span>Qua</span>
+                    <span>Qui</span>
+                    <span>Sex</span>
+                    <span>Sáb</span>
+                </div>
+                <div class="dias" id="dias"></div>
+
+                <div class="feriados">
+                    
+                    <p>Feriados:<span class="bolh1"></span> </p>
+                   
+                    <p>Pontes: <span class="bolh2"></span> </p>
+                   
+
+                </div>
+
+             
+                <button class="voltar" onclick="voltarPri()"><i class="fa-solid fa-arrow-left"></i></button>
+
+            </div>
+
+
+
+
+
+            <div class="PerfiL">
+                <button class="voltar" onclick="voltarPri()"><i class="fa-solid fa-arrow-left"></i></button>
+
+                <div class="perfil-container">
+                    <form class="PerFOt">
+                        <label for="foto" class="fotoP">
+                            <img id="preview" src="../cartoes/74484g7f57rgfyuvfyt.png" alt="Foto de Perfil" width="180px">
+                        </label>
+                        <input type="file" id="foto" name="foto" accept="image/*" style="display:none">
+                        
+                    </form>
+                    <h2 class="nome-usuario" id="nomeUsuario">Carregando nome...</h2>
+                    <p class="email-usuario">Carregando email...</p>
+                    <input type="text" id="inputNome" style="display: none;" />
+                    
+                    <button class="btn-editar" onclick="editarNome()">Editar</button>
+                    <button class="btn-salvar" onclick="salvarPerfil()" style="display: none;">Salvar</button>
+                    <button class="btn-sair" onclick="sairConta()">Sair</button>
+                </div>
+            </div>
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+    </main>
+     <script>
+ 
+     </script>
+
+     <script src="script.js">
+     
+       
+
+
+
+
+
+     </script>
+</body>
+</html>

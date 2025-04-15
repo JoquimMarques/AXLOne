@@ -1,0 +1,872 @@
+    
+@media (min-width: 320px) and (max-width:768px){
+   /* Reset básico */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  
+}
+
+html, body {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    overflow-x: hidden;
+  
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* HEADER */
+.header {
+   border-bottom: none;
+    
+    padding: 15px 20px;
+    margin-bottom: -50px ;
+}
+
+.header_nav h1 {
+    font-size: 25px;
+    margin-left: -10px;
+}
+
+.header_nav{
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    
+}
+
+
+.login i{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    background-color: #e0b20e;
+    padding: 20px 22px;
+    border:none;
+    border-radius: 100%;
+    margin-top: 10px;
+    margin-left: 180px;
+    
+
+}
+.perfil i{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    background-color: #e0b20e;
+    padding: 20px 22px;
+    border:none;
+    border-radius: 100%;
+    margin-top: 10px;
+    margin-left: 180px;
+    
+
+}
+
+.login, .luzes-ligada, .luzes-apagada{
+    border: none;
+    background-color: transparent;
+    
+   
+   
+
+}
+
+.luzes-apagada i{
+    background-color: rgb(0, 0, 0);
+    border:none;
+    padding:20px 23px;
+    border-radius: 100px;
+    color:white;
+    font-size: 20px;
+    
+    position: absolute; /* Garante que ele fique fixo */
+    right: 10px; /* Alinha na esquerda */
+    margin: 0; /* Remove margens */
+    top: 10px;
+
+   
+
+} .luzes-ligada i {
+    background-color: rgb(255, 255, 255);
+    border:none;
+    padding: 20px;
+    border-radius: 100px;
+    color:rgb(0, 0, 0);
+    font-size: 20px;
+
+    position: absolute; /* Garante que ele fique fixo */
+    right: 10px; /* Alinha na esquerda */
+    margin: 0; /* Remove margens */
+    top: 10px;
+
+}
+
+
+
+/* CONTAINER PRINCIPAL */
+.container {
+    padding: 80px 20px 20px;
+    text-align: center;
+    display: block;
+    margin-top: -50px;
+    
+}
+
+/* CARTÕES */
+.cartoes h2 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 23px;
+}
+
+.cartoes-container {
+
+    padding: 20px 10px;
+    padding-bottom: 20px;
+   
+    display: flex;
+    margin-left: -12px;
+}
+.cartao img{
+    width: 460px;
+    margin-top: -130px;
+    margin-left: -38px;
+    margin-bottom: -160px;
+  
+}
+
+
+.iban{
+    color: rgba(255, 255, 255, 0.771); 
+    left: 127px;
+    position: absolute;
+    top: 320px;
+    font-size: 18px;
+   
+
+}
+.nomek{
+    position: absolute;
+    left: 50px;
+    top:350px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.771);
+    
+    
+    
+}
+
+
+
+
+
+
+
+/* AÇÕES */
+.acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.acao1,.acao2, .acao3, .acao4, .acao6{
+    background: transparent;
+    border: 2px solid #e0b20e;
+    font-weight: bold;
+    padding: 15px;
+    margin-left: 0;
+    width: 100px;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.acao4 p{
+    margin-left: -3px;
+    
+}
+.acao5{
+    background: transparent;
+    font-weight: bold;
+    padding: 15px;
+    margin-left: 0;
+    width: 100px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    border: 2px solid #e0b20e;
+
+}
+
+
+
+/* Ícones dentro das ações */
+.acao1 i, .acao2 i, .acao3 i, .acao4 i, .acao5 i, .acao6 i {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+/* Animação de preenchimento para todas as ações */
+.acao1::before, .acao2::before, .acao3::before, .acao4::before, .acao5::before, .acao6::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: #e0b20e; /* Cor de preenchimento */
+    border-radius: 50%; /* Faz o preenchimento começar como um círculo */
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease; /* Animação suave */
+    z-index: -1; /* Coloca o preenchimento atrás do texto */
+}
+
+/* Efeito de hover para todas as ações */
+.acao1:hover::before, .acao2:hover::before, .acao3:hover::before, .acao4:hover::before, .acao5:hover::before, .acao6:hover::before {
+    width: 200%; /* Faz o círculo crescer para preencher o botão */
+    height: 200%;
+}
+
+.acao1:hover, .acao2:hover, .acao3:hover, .acao4:hover, .acao5:hover, .acao6:hover {
+    color: black; /* Altera a cor do texto ao passar o mouse */
+}
+
+
+.logo {
+    position: absolute; /* Garante que ele fique fixo */
+    left: 10px; /* Alinha na esquerda */
+    margin: 0; /* Remove margens */
+    top: -48px;
+    width: 200px;
+
+}
+
+.btnA.ativo {
+    background-color: #e0b20e ;/* Cor de fundo vermelha */
+    color: white; /* Cor do texto branca para contraste */
+    border: 1px solid #ffffff; /* Borda para destacar */
+}
+
+
+/* CAMINHOS */
+
+.caminhos{
+    
+    padding: 80px  20px;
+    text-align: center;
+   
+    
+}
+
+.valor{
+   
+    padding: 20px;
+    border-radius: 10px;
+    
+    width: 120%;
+    max-width: 400px;
+    text-align: center;
+
+    /* Centralização na tela */
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.valor h2{
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    margin-top: -40px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/* Estilização dos inputs com ícones */
+.campo1 {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.campo1 input {
+    width: 100%;
+    padding: 13px 30px; /* Espaço para os ícones */
+    border: 2px solid #deb008;
+    background-color: transparent;
+    border-radius: 40px;
+    margin-left: 0;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    color:white;
+    margin-bottom: 20px;
+}
+
+
+
+
+.voltar{
+    background-color: rgb(255, 187, 0);
+    border:none;
+    padding: 18px 22px;
+    border-radius: 100px;
+    color:white;
+    font-size: 20px;
+    position: absolute; /* Garante que ele fique fixo */
+    right: 345px !important; /* Alinha na esquerda */
+    margin: 0; /* Remove margens */
+    top: 12px;
+        
+    
+    
+
+}
+
+.btnV{
+    width: 80%;
+  
+    background: #e0b20e;;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: -3px;
+    margin-top: -60px;
+ 
+    
+   
+}
+
+
+.btnA {
+
+    background: transparent;
+    border: 2px solid #e0b20e;
+    color: rgb(191, 189, 189);
+    padding: 15px;
+    width: 100px;
+    left: 3px;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden; /* Garante que a animação não ultrapasse os limites do botão */
+    z-index: 0; /* Define o contexto de empilhamento */
+    
+
+}
+
+
+
+.btnA::before {
+    content: "";
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: #e0b20e; /* Cor de preenchimento */
+    border-radius: 50%; /* Faz o preenchimento começar como um círculo */
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease; /* Animação suave */
+    z-index: -1; /* Coloca o preenchimento atrás do texto */
+}
+
+.btnA:hover::before {
+    width: 200%; /* Faz o círculo crescer para preencher o botão */
+    height: 200%;
+}
+
+.btnA:hover {
+    color: black; /* Altera a cor do texto ao passar o mouse */
+}
+
+
+
+.valor h2{
+    font-size: 23px;
+}
+
+
+
+
+
+/* .valor-dias{
+     background: transparent;
+   
+     color:white;
+    
+     margin-left: 8px;
+        
+        
+} */
+/* .btnA:nth-child(7){
+    background-color: rgb(0, 47, 255);
+    display: block;
+   
+    
+
+} */
+
+
+
+/* .valor-dias {
+    
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 17px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    cursor: pointer;
+    margin-left: -2px;
+    margin-top: -12px;
+    font-weight: bold;
+    
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+.calendario {
+    width: 378px;
+    margin: -110px -23px;
+    padding: 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: transparent;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    
+    
+}
+
+.mes h2 {
+    margin-bottom: 20px;
+    font-size: 23px;
+    color: #ccc9c9;
+  
+    text-transform: uppercase;
+}
+
+.dias-semana, .dias {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 7px;
+    margin-top: 10px;
+}
+
+.dias-semana span {
+    font-weight: bold;
+    color: #ccc9c9;
+   
+    
+}
+
+.dias div {
+    padding: 10px 11px;
+    border-radius: 100px;
+    background-color: #fff7e2;
+    border: 1px solid #dddddd;
+    margin-left: -1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dias div:hover {
+    background-color: #e0b20e;
+    color: #fff;
+}
+
+.dias .hoje {
+    background-color: #e0b20e;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+
+.dias .feriado {
+    background-color: #cc0000; /* vermelho forte */
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.dias .ponte {
+    background-color: #ff9999; /* vermelho fraco */
+    color: rgb(255, 255, 255);
+}
+
+
+.feriados {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff7e2;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 11px;
+    border: 1px solid #dddddd;
+}
+
+.feriados p {
+    display: flex;
+    align-items: center; /* Alinha o texto e o círculo verticalmente */
+    gap: 10px; /* Espaçamento entre o texto e o círculo */
+    margin: 10px 0;
+}
+
+
+
+.bolh1{
+    display: inline-block;
+    width: 20px; /* Largura do círculo */
+    height: 20px; /* Altura do círculo */
+    background-color: #cc0000; /* Cor do círculo */
+    border-radius: 50%; /* Faz o elemento ser um círculo */
+    border: 1px solid #880202; /* Borda ao redor do círculo */
+}
+.bolh2{
+    display: inline-block;
+    width: 20px; /* Largura do círculo */
+    height: 20px; /* Altura do círculo */
+    background-color:#ff9999; /* Cor do círculo */
+    border-radius: 50%; /* Faz o elemento ser um círculo */
+    border: 1px solid #333; /* Borda ao redor do círculo */
+}
+
+
+
+
+
+
+
+
+
+
+/* Estilo para o título */
+.consulta h2 {
+    font-size: 23px;
+    text-align: center;
+    margin-top: -50px;
+    margin-bottom: 17px;
+    text-transform: uppercase;
+   
+}
+
+
+
+
+/* Contêiner para os valores */
+.aparecer {
+    
+    display: flex;
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    background-color: #f9f9f9;
+   
+    padding: 10px;
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.465); /* Sombra suave */
+    
+}
+
+
+/* Estilo para os spans */
+.aparecer span {
+    font-size: 22px;
+    padding: 10px;
+    background-color: #e0b20e; /* #e0b20eFundo branco */
+    color: rgba(0, 0, 0, 0.879);
+    border: 2px solid #e0b20e;
+    border-radius: 50px; /* Bordas arredondadas */
+    width: 90%; /* Ocupa toda a largura do contêiner */
+    text-align: center; /* Centraliza o texto */
+    font-family: monospace;
+    box-shadow: 1px 5px 0px #9c7d0c; /* Sombra suave */
+}
+
+
+.extrato h2{
+    margin-bottom:55px;
+    font-size: 23px;
+    text-transform: uppercase;
+    margin-top: -100px;
+    
+
+}
+/* Contêiner principal do histórico */
+.aparecer2 {
+    margin: -26px;
+
+}
+
+/* Estilo para cada item do histórico */
+.historico {
+    
+    
+    color: black;
+    font-size: 18px;
+    font-family: monospace;
+   
+  
+}
+
+
+
+/* Estilo para hover nos spans */
+
+#notification-banner {
+    display: none; /* Inicialmente escondido */
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#notification-banner.success {
+    background-color: #4CAF50; /* Cor verde para sucesso */
+    color: white;
+}
+
+#notification-banner.error {
+    background-color: #f44336; /* Cor vermelha para erro */
+    color: white;
+}
+
+#notification-banner.hidden {
+    display: none;
+}
+
+
+
+
+.PerfiL {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    width: 100%;
+  
+    padding: 40px;
+}
+
+
+
+
+
+.perfil-container {
+    background-color: transparent; /* cinza escuro elegante */
+    padding: 48px;
+    border-radius: 16px;
+    width: 150%;
+    position: absolute;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(255, 191, 0, 0.451);
+    top: 96px;
+    left: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.perfil-container:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 20px #958e77;
+}
+
+
+.PerFOt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .fotoP {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #e0b20e;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 160px;
+    height: 160px;
+    margin-top: -30px;
+    
+    background-color: #e7e6e5;
+    transition: border 0.3s;
+    animation: bri 7s infinite;
+  }
+  
+  .fotoP:hover {
+    border-color: #333;
+  }
+  
+  #preview {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.01);
+    object-fit: cover; /* Essencial pra pegar só o rosto */
+  }
+  @keyframes bri {
+    0% {
+        box-shadow: 0 0 0 #e0b20e;
+    }
+    50% {
+        box-shadow: 0 0 10px #e0b20e, 0 0 20px #e0b20e, 0 0 30px #e0b20e;
+    }
+    100% {
+        box-shadow: 0 0 0 #e0b20e;
+    }
+}
+
+.nome-usuario {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.email-usuario {
+    font-size: 15px;
+    color: #aaaaaa;
+    margin-bottom: 80px;
+}
+
+.acoes-usuario {
+    display: flex;
+    gap: 17px;
+}
+
+.acoes-usuario button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+.btn-editar {
+    background-color: #e0b20e;
+    color: #000;
+    margin-left: -2px;
+}
+
+.btn-editar:hover {
+    background-color: #00cc7f;
+    transform: translateY(-2px);
+}
+
+.btn-sair {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+.btn-sair:hover {
+    background-color: #e63939;
+    transform: translateY(-2px);
+}
+#inputNome{
+    width: 80%;
+    padding: 10px 30px; /* Espaço para os ícones */
+    border: 2px solid #e0b20e;
+    background-color: transparent;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    color:white;
+    
+
+
+}
+.btn-salvar{
+    width: 30%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: none;
+    margin-top: 20px;
+    color: white;
+    border-radius: 8px;
+    
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #e0b20e;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+}
+
+
+
+.banner {
+    position: fixed;
+    top: 280px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 30px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid white;
+    color: white;
+    text-align: center;
+    z-index: 1000;
+    display: none;
+}
+
+/* Tipos de mensagem */
+.sucesso {
+    background-color: #0ebd1c; /* Verde */
+}
+
+.erro {
+    background-color: #ff0000; /* Vermelho */
+}
+
+.info {
+    background-color: #795f01; /* Marrom */
+}
+
+
+
+
+
+}
+
